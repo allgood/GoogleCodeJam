@@ -11,27 +11,31 @@ public class FractileLarge {
 		for (int t = 1; t <= numCases; t++)
 		{
 			String answer="";
+		
+			/*
+			 * Fixed using the official problem analysis in
+			 * https://code.google.com/codejam/contest/6254486/dashboard#s=a&a=3
+			 */
 			
 			int k = input.nextInt();
 			int c = input.nextInt();
 			int s = input.nextInt();
-			
-			BigInteger step = BigInteger.valueOf(k).pow(c-1);
-			BigInteger length = BigInteger.valueOf(k).pow(c);
-			for (int b=0; b<k; b++) {
-				BigInteger bi = BigInteger.valueOf(b).multiply(step);
-				if (b<k-1 && c>1) {
-					b++;
-				}
-				BigInteger tile = bi.add(BigInteger.valueOf(b+1));
-				if (tile.compareTo(length)>0) {
-					tile = tile.subtract(BigInteger.ONE);
-				}
-				answer += " "+tile.toString();
-				s--;
-				if (s<0 || tile.compareTo(length)>0) {
-					answer = " IMPOSSIBLE";
-					break;
+
+			// step in C interval, since there is one tile
+			// in the final art that can tell if any C tiles of
+			// the original is gold.
+			if (c*s < k) {
+				answer = " IMPOSSIBLE";
+			} else {
+				BigInteger p;
+				for (int i=1; i<k+1; i+=c) {
+
+					// loop to find the most significant tile
+					p = BigInteger.ONE;
+					for (int j=0; j<c; j++) {
+						p = (p.subtract(BigInteger.ONE)).multiply(BigInteger.valueOf(k)).add(BigInteger.valueOf(Math.min(i+j, k)));
+					}
+					answer += " "+p.toString();
 				}
 			}
 			
