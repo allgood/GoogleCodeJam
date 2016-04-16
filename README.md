@@ -19,3 +19,8 @@ The Qualification Round happened from Apr, 8 2016 23:00UTC to Apr, 10 2016 01:00
 The first code for the problem D, available on changeset f278392, large solution is wrong as I've failed on it. Finished the round with 75 points in the 3714th place out of almost 30k competitors.
 
 After this I've corrected the solution based on the [official analysis of the problem](https://code.google.com/codejam/contest/6254486/dashboard#s=a&a=3) and it is available on the git head.
+
+### Round 1-A
+
+Solved only the first problem on the given time. Problem was very simple.
+
