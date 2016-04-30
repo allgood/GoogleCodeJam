@@ -24,3 +24,7 @@ After this I've corrected the solution based on the [official analysis of the pr
 
 Solved only the first problem on the given time. Problem was very simple.
 
+### Round 1-B
+
+Again solved only the first problem on the given time. Was not so simple as the Round 1-A. Got stuck on second problem again.
+
